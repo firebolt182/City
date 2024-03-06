@@ -56,5 +56,18 @@ public class Human {
         this.father = father;
         this.mother = mother;
     }
-    
+
+    public Human createChild(String name, String middleName, String lastName,
+                             Sex sex, Human father) throws SexException {
+        if (this.getSex().equals(father.getSex())) {
+            throw new SexException("Пол отца и матери совпадает");
+        }
+        Human child = new Human(name, middleName, lastName, sex);
+        child.indicateParents(this, father);
+        return child;
+    }
+
+    public String getFullName() {
+        return String.format("%s %s %s", lastName, name, middleName);
+    }
 }
