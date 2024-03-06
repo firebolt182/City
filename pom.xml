@@ -39,4 +39,9 @@
         </dependencies>
     </dependencyManagement>
 
+    <profiles>
+        <profile><id>PROM</id></profile>
+        <profile><id>TEST</id></profile>
+    </profiles>
+
 </project>
