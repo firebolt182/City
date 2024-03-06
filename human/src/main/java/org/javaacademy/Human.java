@@ -46,4 +46,15 @@ public class Human {
         this.lastName = StringUtils.capitalize(lastName);
         this.sex = sex;
     }
+
+    public void indicateParents(Human mother, Human father) throws SexException {
+        if (mother.getSex().equals(father.getSex())) {
+            throw new SexException("Пол отца и матери совпадает");
+        }
+        father.children.add(this);
+        mother.children.add(this);
+        this.father = father;
+        this.mother = mother;
+    }
+    
 }
