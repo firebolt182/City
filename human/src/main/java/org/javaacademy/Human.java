@@ -1,50 +1,35 @@
 package org.javaacademy;
 
+import lombok.AccessLevel;
+import lombok.*;
+import lombok.experimental.*;
 import org.apache.commons.lang3.StringUtils;
 import java.util.List;
 
+@Getter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Human {
-    private String name;
-    private String middleName;
-    private String lastName;
-    private Sex sex;
-    private Human father = null;
-    private Human mother = null;
-    private List<Human> children = null;
-
-    public String getName() {
-        return name;
-    }
-
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public Sex getSex() {
-        return sex;
-    }
-
-    public Human getFather() {
-        return father;
-    }
-
-    public Human getMother() {
-        return mother;
-    }
-
-    public List<Human> getChildren() {
-        return children;
-    }
+    @NonNull
+    String name;
+    @NonNull
+    String middleName;
+    @NonNull
+    String lastName;
+    @NonNull
+    Sex sex;
+    Human father;
+    Human mother;
+    List<Human> children;
 
     public Human(String name, String middleName, String lastName, Sex sex) {
-        this.name = StringUtils.capitalize(name);
-        this.middleName = StringUtils.capitalize(middleName);
-        this.lastName = StringUtils.capitalize(lastName);
+        this.name = capitalize(name);
+        this.middleName = capitalize(middleName);
+        this.lastName = capitalize(lastName);
         this.sex = sex;
+    }
+
+    private String capitalize(String value) {
+        return StringUtils.capitalize(StringUtils.lowerCase(value));
     }
 
     public void indicateParents(Human mother, Human father) throws SexException {
