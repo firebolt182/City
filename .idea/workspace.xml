@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fd87bc7-83e5-4982-bc8e-f03442912ba2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/civil_registry/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/civil_registry/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/civil_registry/src/main/java/org/javaacademy/Citizen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/civil_registry/src/main/java/org/javaacademy/CitizenAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/civil_registry/src/main/java/org/javaacademy/FamilyType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
@@ -13,6 +18,14 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -25,6 +38,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2dKRxAviDMrkTsHuisXfXHMPqar" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -59,7 +75,7 @@
       <updated>1709755029533</updated>
       <workItem from="1709755030551" duration="1577000" />
       <workItem from="1709826165668" duration="369000" />
-      <workItem from="1709835625334" duration="4168000" />
+      <workItem from="1709835625334" duration="4491000" />
     </task>
     <servers />
   </component>
