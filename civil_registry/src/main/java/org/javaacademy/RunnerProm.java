@@ -29,19 +29,12 @@ public class RunnerProm {
                 Sex.MALE, FamilyType.NOT_MARRIED, null);
         Citizen son3 = new Citizen("Lilly", "Ad", "Billian",
                 Sex.FEMALE, FamilyType.NOT_MARRIED, null);
-        Citizen son4 = new Citizen("Jenny", "Ad", "Billenko",
-                Sex.FEMALE, FamilyType.NOT_MARRIED, null);
-        Citizen son5 = new Citizen("Katy", "Ad", "Billiard",
-                Sex.FEMALE, FamilyType.NOT_MARRIED, null);
-
         civilRegistry.weddingRegistration(maria, stepan, LocalDate.of(2024, 3, 4));
         civilRegistry.weddingRegistration(jane, jack, LocalDate.of(2024, 3, 4));
         civilRegistry.divorceRegistration(irina, mike, LocalDate.of(2024, 3, 4));
         civilRegistry.childBirth(son1, elena, nikita, LocalDate.of(2024, 3, 4));
         civilRegistry.childBirth(son2, irina, mike, LocalDate.of(2024, 3, 4));
         civilRegistry.childBirth(son3, jane, jack, LocalDate.of(2024, 3, 4));
-        civilRegistry.childBirth(son4, maria, stepan, LocalDate.of(2024, 3, 4));
-        civilRegistry.childBirth(son5, elena, mike, LocalDate.of(2024, 3, 4));
         System.out.println(civilRegistry.makeStatistics(LocalDate.of(2024, 3, 4)));
     }
 }

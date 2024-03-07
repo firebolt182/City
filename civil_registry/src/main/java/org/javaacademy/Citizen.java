@@ -6,10 +6,10 @@ import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 @Getter
+@Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Citizen extends Human{
     FamilyType familyType;
-    @Setter
     Human marriedWith;
 
     public Citizen(String name, String middleName, String lastName, Sex sex,

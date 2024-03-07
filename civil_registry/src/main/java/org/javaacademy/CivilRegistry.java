@@ -25,18 +25,29 @@ public class CivilRegistry {
 
     public void weddingRegistration(Citizen woman, Citizen man, LocalDate localDate) {
         checkSex(woman, man);
-        woman.setMarriedWith(man);
-        man.setMarriedWith(woman);
+        changeFamilyType(woman, man, FamilyType.MARRIED);
+        changeMarriedWith(woman, man);
         citizenRecordings.add(new CitizenActionRecord(localDate, CitizenAction.WEDDING_REGISTRY,
                 List.of(woman, man)));
     }
 
     public void divorceRegistration(Citizen woman, Citizen man, LocalDate localDate) {
         checkSex(woman, man);
+        changeFamilyType(woman, man, FamilyType.DIVORCED);
         woman.setMarriedWith(null);
         man.setMarriedWith(null);
         citizenRecordings.add(new CitizenActionRecord(localDate, CitizenAction.DIVORCE_REGISTRY,
                 List.of(woman, man)));
+    }
+
+    private void changeFamilyType(Citizen woman, Citizen man, FamilyType familyType) {
+        woman.setFamilyType(familyType);
+        man.setFamilyType(familyType);
+    }
+
+    private void changeMarriedWith(Citizen woman, Citizen man) {
+        woman.setMarriedWith(man);
+        man.setMarriedWith(woman);
     }
 
     private void checkSex(Citizen firstPerson, Citizen secondPerson){
