@@ -2,8 +2,7 @@ package org.javaacademy;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.commons.collections4.MultiValuedMap;
-import org.apache.commons.collections4.multimap.HashSetValuedHashMap;
+import org.apache.commons.collections4.map.MultiValueMap;
 import org.javaacademy.programmer.Programmer;
 import org.javaacademy.programmer.Task;
 
@@ -17,7 +16,7 @@ public class Company {
     private String name;
     private Manager manager;
     private List<Programmer> programmersList;
-    private MultiValuedMap<Programmer, Task> completedTasks = new HashSetValuedHashMap<>();
+    private MultiValueMap<Programmer, Task> completedTasks = new MultiValueMap<>();
     private Map<Employee, Double> reportCard = new HashMap<>();
     private double costs;
 
@@ -71,5 +70,12 @@ public class Company {
         reportCard.forEach((employee, aDouble) -> employee.setAmountOfEarnings(employee.getHourlyRate() * aDouble));
         reportCard.forEach((employee, aDouble) -> setCosts(costs + employee.getHourlyRate() * aDouble));
         reportCard.clear();
+    }
+
+    public void companyInfo() {
+        System.out.printf("%s\nЗатраты: %.2f\n", name, costs);
+        for (Map.Entry<Programmer, Object> map : this.getCompletedTasks().entrySet()) {
+            System.out.println(map.getKey().getFullName() + " - " + map.getValue());
+        }
     }
 }
