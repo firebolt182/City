@@ -6,7 +6,7 @@ import lombok.Getter;
 public class Manager extends Employee{
     private int hourlyRate = 10_000;
 
-    public Manager(String name, String middleName, String lastName, Sex sex) {
-        super(name, middleName, lastName, sex);
+    public Manager(String name, String middleName, String lastName, Boolean isMale) {
+        super(name, middleName, lastName, isMale);
     }
 }

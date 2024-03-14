@@ -8,7 +8,9 @@ import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.TreeSet;
 
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -16,7 +18,7 @@ public class CivilRegistry {
     @NonNull
     @Getter
     String name;
-    List<CitizenActionRecord> citizenRecordings = new ArrayList<>();
+    TreeSet<CitizenActionRecord> citizenRecordings = new TreeSet<>(Comparator.comparing(CitizenActionRecord::getDate));
 
     public void childBirth(Citizen child, Citizen mother, Citizen father, LocalDate localDate) {
         citizenRecordings.add(new CitizenActionRecord(localDate, CitizenAction.BIRTH_REGISTRY,
@@ -51,13 +53,12 @@ public class CivilRegistry {
     }
 
     private void checkSex(Citizen firstPerson, Citizen secondPerson){
-        if (firstPerson.getSex() == secondPerson.getSex()) {
+        if (firstPerson.isMale() == secondPerson.isMale()) {
             throw new RuntimeException("Ошибка. Пол у двух персон совпадает");
         }
     }
 
     public String makeStatistics(LocalDate date){
-        citizenRecordings.sort(new CivilRegistryComparator());
         List<CitizenActionRecord> actionsByDate = citizenRecordings.stream()
                 .filter(record -> record.getDate().equals(date))
                 .toList();

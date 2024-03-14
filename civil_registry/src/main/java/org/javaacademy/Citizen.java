@@ -8,18 +8,13 @@ import lombok.experimental.FieldDefaults;
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Citizen extends Human{
+public class Citizen extends Human {
     FamilyType familyType;
     Human marriedWith;
 
-    public Citizen(String name, String middleName, String lastName, Sex sex,
-                   FamilyType familyType, Human marriedWith) {
-        super(name, middleName, lastName, sex);
+    public Citizen(String name, String middleName, String lastName, boolean isMale,
+                   FamilyType familyType) {
+        super(name, middleName, lastName, isMale);
         this.familyType = familyType;
-        if (familyType == FamilyType.MARRIED) {
-            this.marriedWith = marriedWith;
-        } else {
-            this.marriedWith = null;
-        }
     }
 }

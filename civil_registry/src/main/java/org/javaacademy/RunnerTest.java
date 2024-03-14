@@ -6,29 +6,31 @@ public class RunnerTest {
     public static void main(String[] args) {
         CivilRegistry civilRegistry = new CivilRegistry("TEST_ZAGS");
         Citizen maria = new Citizen("Maria", "Ad", "Petrova",
-                Sex.FEMALE, FamilyType.NOT_MARRIED, null);
+                false, FamilyType.NOT_MARRIED);
         Citizen stepan = new Citizen("Stepan", "Ad", "Prokhorov",
-                Sex.MALE, FamilyType.NOT_MARRIED, null);
+                true, FamilyType.NOT_MARRIED);
         Citizen jane = new Citizen("Jane", "Ad", "Doe",
-                Sex.FEMALE, FamilyType.NOT_MARRIED, null);
+                false, FamilyType.NOT_MARRIED);
         Citizen jack = new Citizen("Jack", "Ad", "Dex",
-                Sex.MALE, FamilyType.MARRIED, jane);
+                true, FamilyType.MARRIED);
+        jack.setMarriedWith(jane);
         jane.setMarriedWith(jack);
         Citizen irina = new Citizen("Irina", "Ad", "Testova",
-                Sex.FEMALE, FamilyType.MARRIED, null);
+                false, FamilyType.MARRIED);
         Citizen mike = new Citizen("Mike", "Ad", "Ivanov",
-                Sex.MALE, FamilyType.NOT_MARRIED, irina);
+                true, FamilyType.NOT_MARRIED);
+        irina.setMarriedWith(mike);
         mike.setMarriedWith(irina);
         Citizen elena = new Citizen("elena", "Ad", "Bolshova",
-                Sex.FEMALE, FamilyType.NOT_MARRIED, null);
+                false, FamilyType.NOT_MARRIED);
         Citizen nikita = new Citizen("Nikita", "Ad", "Nikitin",
-                Sex.MALE, FamilyType.NOT_MARRIED, null);
+                true, FamilyType.NOT_MARRIED);
         Citizen son1 = new Citizen("Bill", "Ad", "Billy",
-                Sex.MALE, FamilyType.NOT_MARRIED, null);
+                true, FamilyType.NOT_MARRIED);
         Citizen son2 = new Citizen("Bob", "Ad", "Bills",
-                Sex.MALE, FamilyType.NOT_MARRIED, null);
+                true, FamilyType.NOT_MARRIED);
         Citizen son3 = new Citizen("Lilly", "Ad", "Billian",
-                Sex.FEMALE, FamilyType.NOT_MARRIED, null);
+                false, FamilyType.NOT_MARRIED);
         civilRegistry.weddingRegistration(maria, stepan, LocalDate.of(2024, 3, 4));
         civilRegistry.weddingRegistration(jane, jack, LocalDate.of(2024, 3, 4));
         civilRegistry.divorceRegistration(irina, mike, LocalDate.of(2024, 3, 4));
