@@ -7,34 +7,38 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.List;
 
 @Getter
-@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Human {
     @NonNull
-    String name;
+    private String name;
     @NonNull
-    String middleName;
+    private String middleName;
     @NonNull
-    String lastName;
+    private String lastName;
     @NonNull
-    Sex sex;
-    Human father;
-    Human mother;
-    List<Human> children;
+    private boolean isMale;
+    private Human father;
+    private Human mother;
+    private List<Human> children;
 
-    public Human(String name, String middleName, String lastName, Sex sex) {
+    public Human(String name, String middleName, String lastName, boolean isMale) {
         this.name = capitalize(name);
         this.middleName = capitalize(middleName);
         this.lastName = capitalize(lastName);
-        this.sex = sex;
+        this.isMale = isMale;
     }
 
     private String capitalize(String value) {
-        return StringUtils.capitalize(StringUtils.lowerCase(value));
+        String result = toLowerCase(value);
+        return StringUtils.capitalize(result);
     }
 
-    public void indicateParents(Human mother, Human father) throws SexException {
-        if (mother.getSex().equals(father.getSex())) {
-            throw new SexException("Пол отца и матери совпадает");
+    private String toLowerCase(String value) {
+        return StringUtils.lowerCase(value);
+    }
+
+    public void indicateParents(Human mother, Human father) {
+        if (mother.isMale == father.isMale) {
+            throw new RuntimeException("Пол отца и матери совпадает");
         }
         father.children.add(this);
         mother.children.add(this);
@@ -43,11 +47,11 @@ public class Human {
     }
 
     public Human createChild(String name, String middleName, String lastName,
-                             Sex sex, Human father) throws SexException {
-        if (this.getSex().equals(father.getSex())) {
-            throw new SexException("Пол отца и матери совпадает");
+                             boolean isMale, Human father) {
+        if (this.isMale == father.isMale) {
+            throw new RuntimeException("Пол отца и матери совпадает");
         }
-        Human child = new Human(name, middleName, lastName, sex);
+        Human child = new Human(name, middleName, lastName, isMale);
         child.indicateParents(this, father);
         return child;
     }

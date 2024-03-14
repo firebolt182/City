@@ -11,7 +11,7 @@ public class Task {
     private boolean isDone;
     private double timeCosts;
 
-    protected Task(String description, int timeCosts) {
+    public Task(String description, int timeCosts) {
         this.description = description;
         this.timeCosts = timeCosts;
     }
