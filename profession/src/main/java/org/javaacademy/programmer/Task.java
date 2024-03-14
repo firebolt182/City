@@ -15,4 +15,9 @@ public class Task {
         this.description = description;
         this.timeCosts = timeCosts;
     }
+
+    @Override
+    public String toString() {
+        return description;
+    }
 }

@@ -7,7 +7,8 @@
     <list default="true" id="4fd87bc7-83e5-4982-bc8e-f03442912ba2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/company/src/main/java/org/javaacademy/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/company/src/main/java/org/javaacademy/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profession/src/main/java/org/javaacademy/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/profession/src/main/java/org/javaacademy/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profession/src/main/java/org/javaacademy/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/profession/src/main/java/org/javaacademy/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profession/src/main/java/org/javaacademy/programmer/Programmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/profession/src/main/java/org/javaacademy/programmer/Programmer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profession/src/main/java/org/javaacademy/programmer/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/profession/src/main/java/org/javaacademy/programmer/Task.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,12 +49,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Runner.executor": "Run",
+    "Maven.city [clean].executor": "Run",
+    "Maven.city [install].executor": "Run",
     "Maven.profession [clean].executor": "Run",
     "Maven.profession [install].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Task__12",
+    "git-widget-placeholder": "Task__13",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Smith/IdeaProjects/Ablazzing/City",
@@ -73,6 +76,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\work\projects\city\human\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.javaacademy" />
     </key>
   </component>
   <component name="RunManager">
